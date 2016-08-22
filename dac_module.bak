@@ -792,25 +792,23 @@ Connection ~ 5000 2200
 $Comp
 L +5V #PWR023
 U 1 1 57B7A91F
-P 4900 1800
-F 0 "#PWR023" H 4900 1890 20  0001 C CNN
-F 1 "+5V" H 4900 1890 30  0000 C CNN
-F 2 "" H 4900 1800 60  0000 C CNN
-F 3 "" H 4900 1800 60  0000 C CNN
-	1    4900 1800
+P 5000 1300
+F 0 "#PWR023" H 5000 1390 20  0001 C CNN
+F 1 "+5V" H 5000 1390 30  0000 C CNN
+F 2 "" H 5000 1300 60  0000 C CNN
+F 3 "" H 5000 1300 60  0000 C CNN
+	1    5000 1300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5200 1800 4900 1800
 Text GLabel 1750 1550 0    39   Input ~ 0
 CS
 Wire Wire Line
 	1950 1550 1750 1550
-Text GLabel 5000 1600 0    39   Input ~ 0
+Text GLabel 5000 1500 0    39   Input ~ 0
 CS
 Wire Wire Line
 	5200 1600 5000 1600
-Text GLabel 5000 1500 0    39   Input ~ 0
+Text GLabel 5000 1600 0    39   Input ~ 0
 CLK
 Wire Wire Line
 	5200 1500 5000 1500
@@ -827,8 +825,10 @@ F 3 "" H 4700 1850 60  0000 C CNN
 	1    4700 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 5000 1300 0    39   Input ~ 0
+Text GLabel 5000 1800 0    39   Input ~ 0
 MOSI
 Wire Wire Line
 	6000 3750 6000 3700
+Wire Wire Line
+	5200 1800 5000 1800
 $EndSCHEMATC
