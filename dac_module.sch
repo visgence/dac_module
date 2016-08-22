@@ -424,7 +424,7 @@ F 1 "PWR" H 7850 1750 50  0000 C CNN
 F 2 "LEDs:LED_0603" H 7850 1850 60  0001 C CNN
 F 3 "~" H 7850 1850 60  0000 C CNN
 	1    7850 1850
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L GND #PWR015
@@ -483,7 +483,7 @@ F 1 "POS" H 8200 1750 50  0000 C CNN
 F 2 "LEDs:LED_0603" H 8200 1850 60  0001 C CNN
 F 3 "~" H 8200 1850 60  0000 C CNN
 	1    8200 1850
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8200 1450 8200 1650
@@ -537,7 +537,7 @@ F 1 "NEG" H 8750 1750 50  0000 C CNN
 F 2 "LEDs:LED_0603" H 8750 1850 60  0001 C CNN
 F 3 "~" H 8750 1850 60  0000 C CNN
 	1    8750 1850
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8750 1450 8750 1650
