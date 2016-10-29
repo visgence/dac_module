@@ -1,6 +1,6 @@
 #Power DAC Module
-A DAC biphasic +- 12v DAC that can run off any 3.3v or 5v microcontroller
-By Visgence Inc.
+A DAC biphasic +- 12v DAC that can run off any 3.3v or 5v microcontroller By Visgence Inc.
+![DAC Module](images/dac_module_small.jpg?raw=true)
 
 * DAC IC: MCP4921
 * Input V+
