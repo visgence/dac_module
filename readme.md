@@ -13,3 +13,4 @@ A DAC biphasic +- 12v DAC that can run off any 3.3v or 5v microcontroller By Vis
  
 ## Microcontroller Examples
 * [MSP430G2] (Examples/MSP430G2231/sineWave/readme.md)
+* [Teensy3] (Examples/Teensy3/sineWave/readme.md)
