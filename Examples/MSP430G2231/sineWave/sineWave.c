@@ -1,9 +1,20 @@
+/////////////////////////////////////////////////////////////////////////////////
+//Sine Table Lookup
+//This program creates a sine wave using the am 8bit lookup table
+//Tested on MSP430G2 Launchpad
 //
+//Pins
+// CS   => P1.4
+// CLK  => P1.5
+// MOSI => P1.6
+//
+///2016 Visgence Inc
+/////////////////////////////////////////////////////////////////////////////////
 #include <msp430.h>				
 #include <stdint.h>
 
-#define SS BIT4
-#define SSOUT P1OUT
+#define SS BIT4 //Slave Select is P1.4
+#define SSOUT P1OUT //Save the Port for Slave select
 
 //8bit Sin Table
 const uint8_t sinetable[256] = {
@@ -31,10 +42,12 @@ int main(void) {
 	WDTCTL = WDTPW | WDTHOLD;		// Stop watchdog timer
 	P1DIR |= 0x01;					// Set P1.0 to output direction
 
+	//Set Slave Select Pin as output
 	P1OUT = SS;
 	P1DIR = SS;
 	P1OUT |= SS;
 
+	//Configure the SPI Registers to be master
 	USICTL0 |= USIPE5 + USIMST + USIOE + USISWRST; // Port, SPI master
 	USICTL1 |= USICKPH + USIIE;                     // Counter interrupt, flag remains set
 	USICKCTL = USIDIV_0 + USISSEL_2;      // /16 SMCLK
@@ -45,15 +58,14 @@ int main(void) {
 	USICTL0 |= USIPE7 + USIPE6; // Enable SDI/SDO pins.
 	USICTL1 &= ~USIIFG;
 
-
-
 	uint16_t i;
+
+	//This is the main loop
 	for(;;) {
 		for (i=0;i<256;i++) {
 			writeMCP492x(sinetable[i] * 16, SS);
 		}
 	}
-
 
 	return 0;
 }
