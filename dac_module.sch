@@ -1,36 +1,5 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:visgence_parts
-LIBS:dac_module-cache
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
@@ -53,7 +22,7 @@ MOSI
 Wire Wire Line
 	1750 1850 1950 1850
 $Comp
-L +5V #PWR01
+L power:+5V #PWR01
 U 1 1 57B5EA9D
 P 1800 1250
 F 0 "#PWR01" H 1800 1340 20  0001 C CNN
@@ -64,11 +33,11 @@ F 3 "" H 1800 1250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1350 1400 1950 1400
+	1350 1400 1800 1400
 Wire Wire Line
 	1800 1400 1800 1250
 $Comp
-L GND #PWR02
+L power:GND #PWR02
 U 1 1 57B5EAA0
 P 3200 1600
 F 0 "#PWR02" H 3200 1600 30  0001 C CNN
@@ -81,13 +50,13 @@ $EndComp
 Wire Wire Line
 	2750 1550 3200 1550
 Wire Wire Line
-	5250 3400 5600 3400
+	5250 3400 5300 3400
 Wire Wire Line
 	5600 3400 5600 3300
 Wire Wire Line
 	5600 3300 5950 3300
 $Comp
-L R R4
+L Device:R R4
 U 1 1 57B5EAA3
 P 4900 4000
 F 0 "R4" V 4980 4000 40  0000 C CNN
@@ -106,7 +75,7 @@ Wire Wire Line
 Wire Wire Line
 	4600 3500 4600 4000
 $Comp
-L POT RV1
+L dac_module-rescue:POT RV1
 U 1 1 57B5EAA4
 P 5900 4050
 F 0 "RV1" H 5900 3950 50  0000 C CNN
@@ -117,7 +86,7 @@ F 3 "~" H 5900 4050 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L VSS #PWR03
+L power:VSS #PWR03
 U 1 1 57B5EAA5
 P 6000 3700
 F 0 "#PWR03" H 6000 3700 30  0001 C CNN
@@ -128,7 +97,7 @@ F 3 "" H 6000 3700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD #PWR04
+L power:VDD #PWR04
 U 1 1 57B5EAA6
 P 6150 3000
 F 0 "#PWR04" H 6150 3100 30  0001 C CNN
@@ -139,7 +108,7 @@ F 3 "" H 6150 3000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD #PWR05
+L power:VDD #PWR05
 U 1 1 57B5EAA7
 P 4850 3000
 F 0 "#PWR05" H 4850 3100 30  0001 C CNN
@@ -150,7 +119,7 @@ F 3 "" H 4850 3000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VSS #PWR06
+L power:VSS #PWR06
 U 1 1 57B5EAA8
 P 5000 3750
 F 0 "#PWR06" H 5000 3750 30  0001 C CNN
@@ -171,7 +140,7 @@ Wire Wire Line
 Wire Wire Line
 	5900 3900 5900 3500
 $Comp
-L R R6
+L Device:R R6
 U 1 1 57B5EAA9
 P 6550 4050
 F 0 "R6" V 6630 4050 40  0000 C CNN
@@ -186,7 +155,7 @@ Wire Wire Line
 Wire Wire Line
 	6800 4050 6800 3400
 $Comp
-L R R5
+L Device:R R5
 U 1 1 57B5EAAA
 P 5550 4400
 F 0 "R5" V 5630 4400 40  0000 C CNN
@@ -201,7 +170,7 @@ Wire Wire Line
 Wire Wire Line
 	5550 4050 5650 4050
 $Comp
-L GND #PWR07
+L power:GND #PWR07
 U 1 1 57B5EAAB
 P 5550 4800
 F 0 "#PWR07" H 5550 4800 30  0001 C CNN
@@ -214,7 +183,7 @@ $EndComp
 Wire Wire Line
 	5550 4550 5550 4800
 $Comp
-L R R3
+L Device:R R3
 U 1 1 57B5EAAC
 P 4150 3500
 F 0 "R3" V 4230 3500 40  0000 C CNN
@@ -225,7 +194,7 @@ F 3 "~" H 4150 3500 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4300 3500 4650 3500
+	4300 3500 4600 3500
 Wire Wire Line
 	4250 3300 4650 3300
 Text GLabel 2900 1400 2    39   Input ~ 0
@@ -233,7 +202,7 @@ DAC_OUT
 Text GLabel 4250 3300 0    39   Input ~ 0
 DAC_OUT
 $Comp
-L LM741 U3
+L dac_module-rescue:LM741 U3
 U 1 1 57B5EAAD
 P 2350 3500
 F 0 "U3" H 2500 3650 60  0000 C CNN
@@ -250,7 +219,7 @@ Wire Wire Line
 Wire Wire Line
 	1850 4050 1850 3600
 $Comp
-L VSS #PWR08
+L power:VSS #PWR08
 U 1 1 57B5EAAE
 P 2100 3950
 F 0 "#PWR08" H 2100 3950 30  0001 C CNN
@@ -263,7 +232,7 @@ $EndComp
 Wire Wire Line
 	2250 3800 2250 3950
 $Comp
-L VDD #PWR09
+L power:VDD #PWR09
 U 1 1 57B5EAAF
 P 2250 3000
 F 0 "#PWR09" H 2250 3100 30  0001 C CNN
@@ -276,7 +245,7 @@ $EndComp
 Wire Wire Line
 	2250 3000 2250 3200
 $Comp
-L R R1
+L Device:R R1
 U 1 1 57B5EAB0
 P 1650 3150
 F 0 "R1" V 1730 3150 40  0000 C CNN
@@ -287,7 +256,7 @@ F 3 "~" H 1650 3150 30  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VDD #PWR010
+L power:VDD #PWR010
 U 1 1 57B5EAB1
 P 1650 2800
 F 0 "#PWR010" H 1650 2900 30  0001 C CNN
@@ -298,7 +267,7 @@ F 3 "" H 1650 2800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
+L Device:R R2
 U 1 1 57B5EAB2
 P 1650 3750
 F 0 "R2" V 1730 3750 40  0000 C CNN
@@ -309,7 +278,7 @@ F 3 "~" H 1650 3750 30  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR011
+L power:GND #PWR011
 U 1 1 57B5EAB3
 P 1650 4100
 F 0 "#PWR011" H 1650 4100 30  0001 C CNN
@@ -320,21 +289,21 @@ F 3 "" H 1650 4100 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1650 3900 1650 4100
+	1650 3900 1650 4000
 Wire Wire Line
-	1650 3300 1650 3600
+	1650 3300 1650 3400
 Wire Wire Line
 	1650 3400 2050 3400
 Wire Wire Line
 	1650 2800 1650 3000
 Wire Wire Line
-	2650 3500 4000 3500
+	2650 3500 2850 3500
 Text GLabel 3100 3350 2    39   Input ~ 0
 VREF
 Wire Wire Line
 	3100 3350 2950 3350
 Wire Wire Line
-	2950 3050 2950 3500
+	2950 3050 2950 3350
 Connection ~ 2950 3500
 Text GLabel 2900 1700 2    39   Input ~ 0
 VREF
@@ -344,7 +313,7 @@ Wire Wire Line
 	2900 1400 2750 1400
 Connection ~ 6800 3400
 $Comp
-L GND #PWR012
+L power:GND #PWR012
 U 1 1 57B5EAB7
 P 7550 3700
 F 0 "#PWR012" H 7550 3700 30  0001 C CNN
@@ -359,7 +328,7 @@ Wire Wire Line
 Wire Wire Line
 	7550 3600 7700 3600
 $Comp
-L C C1
+L Device:C C1
 U 1 1 57B5EAB8
 P 1300 3750
 F 0 "C1" H 1300 3850 40  0000 L CNN
@@ -378,7 +347,7 @@ Wire Wire Line
 Wire Wire Line
 	1300 4000 1650 4000
 $Comp
-L C C2
+L Device:C C2
 U 1 1 57B5EAB9
 P 1350 2000
 F 0 "C2" H 1350 2100 40  0000 L CNN
@@ -392,7 +361,7 @@ Wire Wire Line
 	1350 1400 1350 1850
 Connection ~ 1800 1400
 $Comp
-L GND #PWR013
+L power:GND #PWR013
 U 1 1 57B5EABA
 P 1350 2350
 F 0 "#PWR013" H 1350 2350 30  0001 C CNN
@@ -405,7 +374,7 @@ $EndComp
 Wire Wire Line
 	1350 2150 1350 2350
 $Comp
-L +5V #PWR014
+L power:+5V #PWR014
 U 1 1 57B5EABB
 P 7850 950
 F 0 "#PWR014" H 7850 1040 20  0001 C CNN
@@ -416,7 +385,7 @@ F 3 "" H 7850 950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D1
+L dac_module-rescue:LED D1
 U 1 1 57B5EABC
 P 7850 1850
 F 0 "D1" H 7850 1950 50  0000 C CNN
@@ -427,7 +396,7 @@ F 3 "~" H 7850 1850 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR015
+L power:GND #PWR015
 U 1 1 57B5EABD
 P 7850 2150
 F 0 "#PWR015" H 7850 2150 30  0001 C CNN
@@ -438,7 +407,7 @@ F 3 "" H 7850 2150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R7
+L Device:R R7
 U 1 1 57B5EABE
 P 7850 1300
 F 0 "R7" V 7930 1300 40  0000 C CNN
@@ -451,7 +420,7 @@ $EndComp
 Wire Wire Line
 	7850 950  7850 1150
 $Comp
-L VDD #PWR016
+L power:VDD #PWR016
 U 1 1 57B5EABF
 P 8200 950
 F 0 "#PWR016" H 8200 1050 30  0001 C CNN
@@ -462,7 +431,7 @@ F 3 "" H 8200 950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R8
+L Device:R R8
 U 1 1 57B5EAC0
 P 8200 1300
 F 0 "R8" V 8280 1300 40  0000 C CNN
@@ -473,9 +442,9 @@ F 3 "~" H 8200 1300 30  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8200 950  8200 1150
+	8200 950  8200 1050
 $Comp
-L LED D2
+L dac_module-rescue:LED D2
 U 1 1 57B5EAC1
 P 8200 1850
 F 0 "D2" H 8200 1950 50  0000 C CNN
@@ -488,7 +457,7 @@ $EndComp
 Wire Wire Line
 	8200 1450 8200 1650
 $Comp
-L GND #PWR017
+L power:GND #PWR017
 U 1 1 57B5EAC2
 P 8200 2150
 F 0 "#PWR017" H 8200 2150 30  0001 C CNN
@@ -501,7 +470,7 @@ $EndComp
 Wire Wire Line
 	8200 2050 8200 2150
 $Comp
-L GND #PWR018
+L power:GND #PWR018
 U 1 1 57B5EAC3
 P 9000 950
 F 0 "#PWR018" H 9000 950 30  0001 C CNN
@@ -512,7 +481,7 @@ F 3 "" H 9000 950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R9
+L Device:R R9
 U 1 1 57B5EAC4
 P 8750 1300
 F 0 "R9" V 8830 1300 40  0000 C CNN
@@ -523,13 +492,13 @@ F 3 "~" H 8750 1300 30  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8750 850  8750 1150
+	8750 850  8750 1050
 Wire Wire Line
 	8750 850  9000 850 
 Wire Wire Line
 	9000 850  9000 950 
 $Comp
-L LED D3
+L dac_module-rescue:LED D3
 U 1 1 57B5EAC5
 P 8750 1850
 F 0 "D3" H 8750 1950 50  0000 C CNN
@@ -542,7 +511,7 @@ $EndComp
 Wire Wire Line
 	8750 1450 8750 1650
 $Comp
-L VSS #PWR019
+L power:VSS #PWR019
 U 1 1 57B5EAC6
 P 8750 2150
 F 0 "#PWR019" H 8750 2150 30  0001 C CNN
@@ -559,7 +528,7 @@ Wire Wire Line
 Wire Wire Line
 	7850 2050 7850 2150
 $Comp
-L C C4
+L Device:C C4
 U 1 1 57B5EAC7
 P 9100 1600
 F 0 "C4" H 9100 1700 40  0000 L CNN
@@ -578,7 +547,7 @@ Wire Wire Line
 Wire Wire Line
 	9100 1750 9100 2050
 $Comp
-L C C3
+L Device:C C3
 U 1 1 57B5EAC8
 P 8450 1600
 F 0 "C3" H 8450 1700 40  0000 L CNN
@@ -597,7 +566,7 @@ Wire Wire Line
 Wire Wire Line
 	8450 2050 8200 2050
 $Comp
-L GND #PWR020
+L power:GND #PWR020
 U 1 1 57B5EAC9
 P 2850 2000
 F 0 "#PWR020" H 2850 2000 30  0001 C CNN
@@ -614,7 +583,7 @@ Wire Wire Line
 NoConn ~ 2350 3800
 NoConn ~ 2450 3800
 $Comp
-L CONN_2 P5
+L dac_module-rescue:CONN_2 P5
 U 1 1 57B5EACC
 P 8050 3500
 F 0 "P5" V 8000 3500 40  0000 C CNN
@@ -625,7 +594,7 @@ F 3 "" H 8050 3500 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L CONN_1 T1
+L dac_module-rescue:CONN_1 T1
 U 1 1 57B5EACD
 P 3100 3050
 F 0 "T1" H 3180 3050 40  0000 L CNN
@@ -637,7 +606,7 @@ F 3 "" H 3100 3050 60  0000 C CNN
 $EndComp
 Connection ~ 2950 3350
 $Comp
-L MCP4921 U1
+L dac_module-rescue:MCP4921 U1
 U 1 1 57B5EACE
 P 2350 1600
 F 0 "U1" H 2350 1950 60  0000 C CNN
@@ -648,7 +617,7 @@ F 3 "" H 2350 1600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L FUSE F1
+L dac_module-rescue:FUSE F1
 U 1 1 57B5EACF
 P 7250 3400
 F 0 "F1" H 7350 3450 40  0000 C CNN
@@ -661,7 +630,7 @@ $EndComp
 Wire Wire Line
 	7700 3400 7500 3400
 Wire Wire Line
-	6550 3400 7000 3400
+	6550 3400 6800 3400
 Connection ~ 8200 1050
 Connection ~ 8750 1050
 Connection ~ 1650 4000
@@ -677,7 +646,7 @@ Connection ~ 2850 3500
 Wire Wire Line
 	1850 3600 2050 3600
 $Comp
-L LM358 U2
+L linear:LM358 U2
 U 1 1 57B70827
 P 4950 3400
 F 0 "U2" H 4900 3600 50  0000 L CNN
@@ -688,7 +657,7 @@ F 3 "" H 4950 3400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LM358 U2
+L linear:LM358 U2
 U 2 1 57B70A7B
 P 6250 3400
 F 0 "U2" H 6200 3600 50  0000 L CNN
@@ -707,7 +676,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 1550 3200 1600
 $Comp
-L CONN_2 P4
+L dac_module-rescue:CONN_2 P4
 U 1 1 57B74E65
 P 5550 2300
 F 0 "P4" V 5500 2300 40  0000 C CNN
@@ -718,7 +687,7 @@ F 3 "" H 5550 2300 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L CONN_2 P3
+L dac_module-rescue:CONN_2 P3
 U 1 1 57B79F74
 P 5550 2000
 F 0 "P3" V 5500 2000 40  0000 C CNN
@@ -729,7 +698,7 @@ F 3 "" H 5550 2000 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L CONN_2 P2
+L dac_module-rescue:CONN_2 P2
 U 1 1 57B79FDA
 P 5550 1700
 F 0 "P2" V 5500 1700 40  0000 C CNN
@@ -740,7 +709,7 @@ F 3 "" H 5550 1700 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L CONN_2 P1
+L dac_module-rescue:CONN_2 P1
 U 1 1 57B7A043
 P 5550 1400
 F 0 "P1" V 5500 1400 40  0000 C CNN
@@ -750,85 +719,103 @@ F 3 "" H 5550 1400 60  0000 C CNN
 	1    5550 1400
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	4950 2500 5200 2500
-Wire Wire Line
-	5200 2500 5200 2400
 $Comp
-L GND #PWR021
+L power:GND #PWR021
 U 1 1 57B7A4BE
-P 4800 2250
-F 0 "#PWR021" H 4800 2250 30  0001 C CNN
-F 1 "GND" H 4800 2180 30  0001 C CNN
-F 2 "" H 4800 2250 60  0000 C CNN
-F 3 "" H 4800 2250 60  0000 C CNN
-	1    4800 2250
+P 4800 2400
+F 0 "#PWR021" H 4800 2400 30  0001 C CNN
+F 1 "GND" H 4800 2330 30  0001 C CNN
+F 2 "" H 4800 2400 60  0000 C CNN
+F 3 "" H 4800 2400 60  0000 C CNN
+	1    4800 2400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5200 2200 4800 2200
-Wire Wire Line
-	4800 2200 4800 2250
 $Comp
-L VSS #PWR022
+L power:VSS #PWR022
 U 1 1 57B7A66F
-P 4950 2500
-F 0 "#PWR022" H 4950 2500 30  0001 C CNN
-F 1 "VSS" H 4950 2430 30  0000 C CNN
-F 2 "" H 4950 2500 60  0000 C CNN
-F 3 "" H 4950 2500 60  0000 C CNN
-	1    4950 2500
+P 4950 2200
+F 0 "#PWR022" H 4950 2200 30  0001 C CNN
+F 1 "VSS" H 4950 2130 30  0000 C CNN
+F 2 "" H 4950 2200 60  0000 C CNN
+F 3 "" H 4950 2200 60  0000 C CNN
+	1    4950 2200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5200 1900 4700 1900
-Wire Wire Line
-	4700 1900 4700 1850
-Wire Wire Line
-	5200 2100 5000 2100
-Wire Wire Line
-	5000 2100 5000 2200
-Connection ~ 5000 2200
 $Comp
-L +5V #PWR023
+L power:+5V #PWR023
 U 1 1 57B7A91F
-P 5000 1300
-F 0 "#PWR023" H 5000 1390 20  0001 C CNN
-F 1 "+5V" H 5000 1390 30  0000 C CNN
-F 2 "" H 5000 1300 60  0000 C CNN
-F 3 "" H 5000 1300 60  0000 C CNN
-	1    5000 1300
+P 5025 1500
+F 0 "#PWR023" H 5025 1590 20  0001 C CNN
+F 1 "+5V" H 5025 1625 30  0000 C CNN
+F 2 "" H 5025 1500 60  0000 C CNN
+F 3 "" H 5025 1500 60  0000 C CNN
+	1    5025 1500
 	1    0    0    -1  
 $EndComp
 Text GLabel 1750 1550 0    39   Input ~ 0
 CS
 Wire Wire Line
 	1950 1550 1750 1550
-Text GLabel 5000 1500 0    39   Input ~ 0
+Text GLabel 5025 1300 0    39   Input ~ 0
 CS
 Wire Wire Line
 	5200 1600 5000 1600
-Text GLabel 5000 1600 0    39   Input ~ 0
-CLK
-Wire Wire Line
-	5200 1500 5000 1500
-Wire Wire Line
-	5200 1300 5000 1300
-$Comp
-L VDD #PWR024
-U 1 1 57B8C4EE
-P 4700 1850
-F 0 "#PWR024" H 4700 1950 30  0001 C CNN
-F 1 "VDD" H 4700 1960 30  0000 C CNN
-F 2 "" H 4700 1850 60  0000 C CNN
-F 3 "" H 4700 1850 60  0000 C CNN
-	1    4700 1850
-	1    0    0    -1  
-$EndComp
-Text GLabel 5000 1800 0    39   Input ~ 0
-MOSI
 Wire Wire Line
 	6000 3750 6000 3700
 Wire Wire Line
 	5200 1800 5000 1800
+Wire Wire Line
+	2950 3500 4000 3500
+Wire Wire Line
+	6800 3400 7000 3400
+Wire Wire Line
+	1800 1400 1950 1400
+Wire Wire Line
+	2950 3350 2950 3500
+Wire Wire Line
+	8200 1050 8200 1150
+Wire Wire Line
+	8750 1050 8750 1150
+Wire Wire Line
+	1650 4000 1650 4100
+Wire Wire Line
+	1650 3500 1650 3600
+Wire Wire Line
+	1650 3400 1650 3500
+Wire Wire Line
+	2850 3500 2950 3500
+Wire Wire Line
+	5300 3400 5600 3400
+Wire Wire Line
+	4600 3500 4650 3500
+Wire Wire Line
+	5200 1300 5025 1300
+Wire Wire Line
+	5200 1500 5025 1500
+Wire Wire Line
+	5200 1900 4800 1900
+$Comp
+L power:VDD #PWR024
+U 1 1 57B8C4EE
+P 5050 2100
+F 0 "#PWR024" H 5050 2200 30  0001 C CNN
+F 1 "VDD" H 5050 2225 30  0000 C CNN
+F 2 "" H 5050 2100 60  0000 C CNN
+F 3 "" H 5050 2100 60  0000 C CNN
+	1    5050 2100
+	1    0    0    -1  
+$EndComp
+Text GLabel 5000 1800 0    39   Input ~ 0
+CLK
+Text GLabel 5000 1600 0    39   Input ~ 0
+MOSI
+Wire Wire Line
+	5200 2100 5050 2100
+Wire Wire Line
+	5200 2400 4800 2400
+Wire Wire Line
+	4800 1900 4800 2400
+Connection ~ 4800 2400
+Wire Wire Line
+	5200 2200 4950 2200
 $EndSCHEMATC
